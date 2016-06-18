@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     #render json: PostSerializer.serialize(post)
 
     #this is how we use rails' built in serializer to JSON
-    render json: post.to_json
+    render json: post.to_json(include: :author)
   end
 
 private
