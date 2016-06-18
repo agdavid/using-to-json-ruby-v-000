@@ -28,7 +28,11 @@ class PostsController < ApplicationController
 
   def post_data
     post = Post.find(params[:id])
-    render json: PostSerializer.serialize(post)
+    # this is how we would manually convert to JSON
+    #render json: PostSerializer.serialize(post)
+
+    #this is how we use rails' built in serializer to JSON
+    render json: post.to_json
   end
 
 private
